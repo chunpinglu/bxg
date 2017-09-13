@@ -1,0 +1,15 @@
+require.config({
+    baseUrl:"/views/assets",
+    paths:{
+        jquery:"./jquery/jquery",
+        cookie:"./jquery-cookie/jquery.cookie",
+        template:"./artTemplate/template",
+        bootstrap:"./bootstrap/js/bootstrap",
+        utils:"../static/js/lib/utils"
+    },
+    shim:{
+        bootstrap:{
+            deps:["jquery"]
+        }
+    }
+})
