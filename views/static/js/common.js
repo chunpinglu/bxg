@@ -7,8 +7,10 @@
 	// 	$(this).next().slideToggle();
 	// });
 
-	define(["jquery","template","cookie"],function($,template){
+	define(["jquery","template",'Nprogress',"cookie"],function($,template,NProgress){
+		NProgress.start();
 		$(function(){
+			NProgress.done();
 			if(location.pathname!="/dashboard/login"){
 				if(!$.cookie("PHPSESSID")){
 					location.href="/dashboard/login";
@@ -47,6 +49,15 @@
 					//让当前a标签的父元素添加一个active类
 					$(ele).addClass("active");
 				}
+			})
+
+			//给每个页面中的ajax请求添加进度条
+			$(document).ajaxStart(function(){
+				NProgress.start();
+			})
+
+			$(document).ajaxStop(function(){
+				NProgress.done();
 			})
 
 			
