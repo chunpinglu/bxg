@@ -49,6 +49,7 @@ define(['jquery','template','utils','bootstrap','datepicker','datepickerCN','val
                             $("form").validate({
                                 sendForm:false,
                                 onBlur:true,
+                                onChange:true,
                                 valid:function(){
                                     var data=$("form").serialize();
                                         $.ajax({
